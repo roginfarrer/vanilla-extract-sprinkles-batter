@@ -52,6 +52,10 @@ const App = () => (
         <h2
           className={sprinkles({
             fontFamily: 'body',
+            color: {
+              lightMode: 'green-700',
+              darkMode: 'green-50',
+            },
             textAlign: 'center',
             typeSize: {
               mobile: '2x',

@@ -48,7 +48,6 @@ export const card = style({
     desktop: '8x',
   },
   // ...or regular styles
-  borderRadius: '30px',
   transition: 'transform 4s ease-in-out',
   ':hover': {
     cursor: 'default',
@@ -59,7 +58,7 @@ export const card = style({
 
 ## Installation
 
-You can't, this hasn't been published. If there's interest, I can make it a real package.
+You can't, this hasn't been published. If there's interest, I can make it a real package. [Here's the source code.](https://github.com/roginfarrer/vanilla-extract-sprinkles-batter/blob/main/packages/library/src/strictBatter.ts)
 
 ## Batter?
 

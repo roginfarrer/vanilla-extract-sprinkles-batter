@@ -27,6 +27,8 @@ export function openBatter<Sprinkles extends Parameters<SprinklesFn>>(
     for (const property in args) {
       if (sprinklesProperties.has(property)) {
         try {
+          // This is not good, it's probably creating styles with each call
+          // TODO: find a better way to check if the value is valid
           if (sprinklesFn({ [property]: args[property] })) {
             sprinks[property] = args[property];
           }
