@@ -27,5 +27,11 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest -w"
+  },
+  "peerDependencies": {
+    "@vanilla-extract/css": "^1"
+  },
+  "devDependencies": {
+    "@vanilla-extract/css": "^1"
   }
 }

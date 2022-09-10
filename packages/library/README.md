@@ -1,32 +1,66 @@
-# Product Name
+A little utility for authoring vanilla-extract `sprinkles()` and `style()` in the same object.
 
-> Short blurb about what your product does.
+Instead of this:
 
-[![Release](https://img.shields.io/github/v/release/roginfarrer/monorepo-template?display_name=tag)](CHANGELOG.md)
-[![CI](https://github.com/roginfarrer/monorepo-template/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/roginfarrer/monorepo-template/actions/workflows/validate.yml)
-
-One to two paragraph statement about your product and what it does.
-
-## Setup
-
-```bash
-npm install <library>
+```typescript
+export const card = style([
+  sprinkles({
+    background: {
+      lightMode: 'green-50',
+      darkMode: 'gray-800',
+    },
+    borderRadius: {
+      mobile: '4x',
+      desktop: '5x',
+    },
+    padding: {
+      mobile: '7x',
+      desktop: '8x',
+    },
+  }),
+  {
+    transition: 'transform 4s ease-in-out',
+    ':hover': {
+      cursor: 'default',
+      transform: 'scale(2) rotate(720deg)',
+    },
+  },
+]);
 ```
 
-## Usage example
+You can do this:
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+```typescript
+const style = batter<Sprinkles>(sprinkles);
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
+export const card = style({
+  // Can use sprinkles...
+  color: {
+    lightMode: 'green-700',
+    darkMode: 'green-50',
+  },
+  background: {
+    lightMode: 'green-50',
+    darkMode: 'gray-800',
+  },
+  padding: {
+    mobile: '7x',
+    desktop: '8x',
+  },
+  // ...or regular styles
+  borderRadius: '30px',
+  transition: 'transform 4s ease-in-out',
+  ':hover': {
+    cursor: 'default',
+    transform: 'scale(1.5) rotate(360deg)',
+  },
+});
+```
 
-## Contributing
+## Installation
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. For detailed contributing guidelines, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+You can't, this hasn't been published. If there's interest, I can make it a real package.
 
-## License
+## Batter?
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Rogin Farrer - [@roginfarrer](https://twitter.com/roginfarrer)
+Yeah, yeah it's a bad name. Not official or final or anything.
